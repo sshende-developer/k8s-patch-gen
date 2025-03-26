@@ -1,5 +1,3 @@
----
-
 ## 📝 `README.md` for `k8s-patch-gen`
 
 ```markdown
@@ -127,5 +125,3 @@ We welcome issues, ideas, and PRs! If you’ve got suggestions to improve the CL
 ## ⭐️ Star this repo if you find it useful!
 
 ```
-
----
