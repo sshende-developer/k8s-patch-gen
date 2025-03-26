@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"os"
 
-	"yamltool/cmd"
+	"generateK8sPatchfile/cmd"
 
 	"github.com/spf13/cobra"
 )
 
 func main() {
 	rootCmd := &cobra.Command{
-		Use:   "yamltool",
-		Short: "CLI tool to generate Velero resource modifier YAML files",
+		Use:   "generateK8sPatchfile",
+		Short: "CLI tool to generate K8s patch filesfor resource modification",
 		Long:  "A command-line tool to interactively generate YAML configuration files for Velero resource modifiers.",
 	}
 
