@@ -1,7 +1,5 @@
 ## `k8s-patch-gen`
 
-```markdown
-
 📦 A powerful, interactive CLI tool to help you generate **Kubernetes resource modifier YAMLs** — specifically for [Velero](https://velero.io) restore customization, with plans to support broader Kubernetes patching use cases.
 
 ## ✨ Features
@@ -24,6 +22,7 @@
 git clone https://github.com/<your-org>/k8s-patch-gen.git
 cd k8s-patch-gen
 make build
+
 ```
 
 The CLI binary will be built at:
@@ -122,5 +121,3 @@ We welcome issues, ideas, and PRs! If you’ve got suggestions to improve the CL
 ---
 
 ## ⭐️ Star this repo if you find it useful!
-
-```
