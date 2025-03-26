@@ -1,7 +1,6 @@
-## 📝 `README.md` for `k8s-patch-gen`
+## `k8s-patch-gen`
 
 ```markdown
-# k8s-patch-gen
 
 📦 A powerful, interactive CLI tool to help you generate **Kubernetes resource modifier YAMLs** — specifically for [Velero](https://velero.io) restore customization, with plans to support broader Kubernetes patching use cases.
 
