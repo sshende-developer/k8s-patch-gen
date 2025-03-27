@@ -58,19 +58,16 @@ Here’s a sample output YAML you can generate with this tool:
 ```yaml
 version: v1
 resourceModifierRules:
-  - conditions:
-      groupResource: deployments.apps
-      resourceNameRegex: "^test-.*$"
-      namespaces:
-        - bar
-        - foo
-    patches:
-      - operation: add
-        path: "/spec/template/spec/containers/0"
-        value: "{\"name\": \"nginx\", \"image\": \"nginx:1.14.2\", \"ports\": [{\"containerPort\": 80}]}"
-      - operation: copy
-        from: "/spec/template/spec/containers/0"
-        path: "/spec/template/spec/containers/1"
+- conditions:
+    groupResource: virtualmachines.kubevirt.io
+    resourceNameRegex: ".*"
+  patches:
+  - operation: replace
+    path: "/spec/runStrategy"
+    value: "Halted"
+  - operation: replace
+    path: "/spec/running"
+    value: false
 ```
 
 ---
