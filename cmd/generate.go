@@ -178,7 +178,38 @@ func generateYAML(cmd *cobra.Command, args []string) {
 			case "copy", "move":
 				survey.AskOne(&survey.Input{Message: "🔀 Enter the source path (from):"}, &from)
 			case "add":
-				value = buildNestedJSON(nil) // Build JSON interactively
+				var entryMode string
+				survey.AskOne(&survey.Select{
+					Message: "📌 How do you want to provide the JSON value?",
+					Options: []string{"Enter raw JSON", "Build interactively"},
+					Default: "Build interactively",
+				}, &entryMode)
+
+				if entryMode == "Enter raw JSON" {
+					var raw string
+					survey.AskOne(&survey.Multiline{
+						Message: "✏️ Paste the JSON payload to insert (array or object):",
+					}, &raw)
+
+					// Validate it's valid JSON
+					var js interface{}
+					if err := json.Unmarshal([]byte(raw), &js); err != nil {
+						fmt.Println("❌ Invalid JSON:", err)
+						return
+					}
+
+					// Re-encode with escaping
+					escaped, err := json.Marshal(js)
+					if err != nil {
+						fmt.Println("❌ Error formatting JSON:", err)
+						return
+					}
+
+					value = string(escaped) // escaped and safe for YAML
+				} else {
+					value = buildNestedJSON(nil)
+				}
+
 			default:
 				survey.AskOne(&survey.Input{Message: "✏️ Enter new value:"}, &value)
 			}
