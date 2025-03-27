@@ -1,0 +1,18 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pr-validation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    # Add your custom validation steps here
+    - name: Custom PR Checks
+      run: |
+        # Example: Run linters, tests, or other validation
+        go vet ./...
+        go test ./...
