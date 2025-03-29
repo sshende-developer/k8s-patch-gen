@@ -1,4 +1,4 @@
-// Copyright (c) 2024 <Your Name or Org>
+// Copyright (c) 2024 Swanand Shende
 // 
 // This file is part of k8s-patch-gen.
 //
