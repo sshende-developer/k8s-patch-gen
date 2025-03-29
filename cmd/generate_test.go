@@ -1,3 +1,16 @@
+// Copyright (c) 2024 <Your Name or Org>
+// 
+// This file is part of k8s-patch-gen.
+//
+// k8s-patch-gen is licensed under the MIT License.
+// You may obtain a copy of the license at:
+//
+//     https://opensource.org/licenses/MIT
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
 package cmd
 
 import (
